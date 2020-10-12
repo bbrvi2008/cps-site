@@ -1,0 +1,16 @@
+.price-list {
+
+  &__table {
+    margin: 16px 0;
+
+    @media (min-width: $screen-md) {
+      margin: 24px 0;
+    }
+  }
+
+  &__description {
+    max-width: 420px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}

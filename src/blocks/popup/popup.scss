@@ -1,0 +1,58 @@
+// body {
+//     max-height: 100vh;
+//     overflow: hidden;
+// }
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.96);
+    z-index: 5;
+
+    @media (min-width: $screen-md) {
+    }
+
+    &__item {
+        height: 100%;
+        overflow: auto;
+
+        @media (min-width: $screen-md) {
+            min-width: 440px;
+            padding-left: 72px;
+        }
+    }
+
+    &__header {
+        padding-top: 24px;
+        background-color: #FFFFFF;
+
+        @media (min-width: $screen-md) {
+            padding-top: 0;
+        }
+    }
+
+    &__button-close {
+        @media (min-width: $screen-md) {
+            position: fixed;
+            right: 472px;
+            top: 32px;
+        }
+    }
+
+    &--active {
+        display: block;
+
+        @media (min-width: $screen-md) {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        & ~ * {
+            filter: grayscale(1);
+        }
+    }
+}

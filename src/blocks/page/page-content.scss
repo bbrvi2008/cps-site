@@ -1,0 +1,7 @@
+.page-content {
+  width: 100%;
+
+  @media (min-width: $screen-xl) {
+    padding-left: 320px;
+  }
+}

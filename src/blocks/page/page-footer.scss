@@ -1,0 +1,54 @@
+.page-footer {
+  padding: 16px 0;
+  border-top: 1px solid #D9FFF5;
+  background-color: #F8F8F8;
+
+  @media (min-width: $screen-md) {
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  &__inner {
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+
+  &__info {
+    margin: 0;
+
+    @media (min-width: $screen-md) {
+      flex: calc((100% - 48px) / 3);
+      margin-right: 24px;
+    }
+
+    &:nth-last-child(n + 2) {
+      margin-bottom: 16px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    &--align-left--md {
+      @media (min-width: $screen-md) {
+        text-align: left;
+      }
+    }
+
+    &--align-right--md {
+      @media (min-width: $screen-md) {
+        text-align: right;
+      }
+    }
+  }
+
+  
+
+}

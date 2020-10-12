@@ -1,0 +1,44 @@
+.about-company {
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__description {
+    text-align: left;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 50%;
+      padding-right: 48px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin: 0;
+      border-radius: 6px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+  }
+}

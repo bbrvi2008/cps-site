@@ -1,0 +1,27 @@
+.content-header {
+  // @include content-wrapper;
+  display: flex;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @media (min-width: $screen-md) {
+    padding-bottom: 32px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 42px;
+    padding-bottom: 8px;
+  }
+
+  &__button-group {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+    }
+  }
+
+  &__button:not(:last-of-type) {
+    margin-right: 32px;
+  }
+}

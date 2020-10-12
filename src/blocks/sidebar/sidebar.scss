@@ -1,0 +1,114 @@
+.sidebar {
+  @include full-viewport;
+  display: none;
+  height: 100vh;
+  position: fixed;
+  z-index: 5;
+
+  @media (min-width: $screen-xl) {
+    left: initial;
+    right: initial;
+    z-index: initial;
+  }
+
+  @media (min-width: $screen-xl) {
+    display: block;
+    min-width: 320px;
+    border-left: 1px solid #D9FFF5;
+    border-right: 1px solid #D9FFF5;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 18px 16px 32px;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+
+    @media (min-width: $screen-md) {
+      max-width: 320px;
+      padding: 18px 24px 32px;
+    }
+
+    @media (min-width: $screen-md) and (max-width: $screen-xl) {
+      box-shadow: 
+        -2px 0px 4px rgba(69, 79, 126, 0.02), 
+        16px 0px 52px rgba(14, 24, 80, 0.2);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 46px;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__button {
+    &:nth-last-child(n + 2) {
+      margin-right: 16px;
+    }
+  }
+
+  &__sidebar-menu {
+    margin-bottom: auto;
+  }
+
+  &__footer {
+    padding-top: 32px;
+  }
+
+  &__button-group {
+    margin-bottom: 16px;
+  }
+  
+  &__email {
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  &__phone {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+
+    @media (min-width: $screen-md) {
+        margin-bottom: 40px;
+    }
+  }
+
+  &__language {
+    text-transform: uppercase;
+  }
+
+  &--active {
+    display: block;
+
+    & ~ * {
+      @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+        filter: grayscale(1);
+      }
+    }
+
+    &::before {
+      @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+        @include full-viewport;
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.96);
+        z-index: -10;
+      }
+    }
+  }
+}

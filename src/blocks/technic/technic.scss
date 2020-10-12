@@ -1,0 +1,25 @@
+.technic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 160px;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $hover-background-color;
+
+    .technic__icon {
+      background-color: $hover-background-color;
+    }
+  }
+
+  &__text {
+    @include highlight-text;
+    align-self: flex-start;
+  }
+}

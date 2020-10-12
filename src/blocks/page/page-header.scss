@@ -1,0 +1,58 @@
+.page-header {
+  // @include content-wrapper;
+  min-height: 88px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #D9FFF5;
+
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: auto;
+    margin-left: 16px;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+    }
+  }
+
+  &__hr {
+    min-width: 2px;
+    height: 32px;
+    margin-right: 20px;
+    border:none;
+    border-radius: 1px;
+    background-color: #EAEAEA;
+
+    @media (min-width: $screen-md) {
+      margin-left: 20px;
+    }
+
+    &--hidden--xs {
+      @media (max-width: $screen-md - 1) {
+        display: none;
+      }
+    }
+  }
+
+  &__button-group {
+    display: flex;
+
+    &--hidden--xs {
+      @media (max-width: $screen-md - 1) {
+        display: none;
+      }
+    }
+  }
+
+  &__button:not(:last-of-type) {
+    margin-right: 16px;
+  }
+}

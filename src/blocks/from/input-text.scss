@@ -1,0 +1,15 @@
+.input-text {
+    @include highlight-text;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    padding: 12px 16px;
+
+    color: #7E7E82;
+    resize: none;
+
+    &::placeholder {
+        color: #B5B6BC;
+    }
+}

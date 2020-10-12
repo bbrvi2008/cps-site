@@ -1,0 +1,80 @@
+.grid {
+  @include reset-list;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 0;
+
+  @media (min-width: $screen-md) {
+    flex-wrap: wrap;
+    padding: 24px 0;
+  }
+
+  &__item {
+    flex: 1 0 85%;
+    margin-right: 24px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 16px;
+      max-width: calc((100% - 48px) / 3);
+      flex: 1 0 calc((100% - 48px) / 3);
+    }
+
+    @media (min-width: $screen-xl) {
+      max-width: calc((100% - 72px) / 4);
+      flex: 1 0 calc((100% - 72px) / 4);
+    }
+
+    &:nth-last-child(n + 1) {
+      margin-right: 16px;
+
+      @media (min-width: $screen-md) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(-n + 3) {
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(-n + 4) {
+      @media (min-width: $screen-xl) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--hide-overflow--after-two-row {
+    .grid__item {
+      &:nth-child(n + 7) {
+        @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+          display: none;
+        }
+      }
+
+      &:nth-child(n + 9) {
+        @media (min-width: $screen-xl) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &--hide-overflow--after-one-row {
+    .grid__item {
+      &:nth-child(n + 4) {
+        @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+          display: none;
+        }
+      }
+
+      &:nth-child(n + 5) {
+        @media (min-width: $screen-xl) {
+          display: none;
+        }
+      }
+    }
+  }
+}

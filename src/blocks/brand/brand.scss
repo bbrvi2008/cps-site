@@ -1,0 +1,27 @@
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $hover-background-color;
+
+    .brand__icon {
+      background-color: $hover-background-color;
+    }
+  }
+
+
+
+  &__img {
+    display: block;
+    max-height: 40px;
+    max-width: 128px;
+    margin-right: auto;
+  }
+}

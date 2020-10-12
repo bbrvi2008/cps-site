@@ -1,0 +1,71 @@
+.slide-menu {
+  @include reset-list;
+  display: flex;
+  overflow: overlay;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::after {
+    content: '';
+    width: 16px;
+    flex-shrink: 0;
+  }
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  &__item {
+    padding: 6px 16px;
+    border: 2px solid $page-background;
+    cursor: pointer;
+    transition: all ease-in .2s;
+
+    &:hover:not(.slide-menu__item--active) {
+      border: 2px solid $hover-background-color;
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: $hover-text-color;
+
+      .slide-menu__link {
+        color: $hover-text-color;
+      }
+    }
+
+    &--active {
+      border: 2px solid #B8FFEC;
+      border-radius: 6px;
+      background: #FFFFFF;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #7E7E82;
+  
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .slide-menu::after {
+    width: 24px;
+  }
+} 
+
+@media (min-width: 1120px) {
+  .slide-menu::after {
+    display: none;
+  }
+
+  .slide-menu {
+    overflow: auto;
+    flex-wrap: wrap;
+  }
+}

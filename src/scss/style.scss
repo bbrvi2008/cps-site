@@ -1,17 +1,47 @@
-$bgColor: #24292e;
-$text: #fff;
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'fonts.scss';
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
+@import '../blocks/grid/grid.scss';
+@import '../blocks/responsive-table/responsive-table.scss';
+@import '../blocks/icon/icon.scss';
+@import '../blocks/button/button.scss';
+@import '../blocks/popup/popup.scss';
+@import '../blocks/popup/popup-form.scss';
+@import '../blocks/from/form.scss';
+@import '../blocks/from/input-text.scss';
+@import '../blocks/link/link.scss';
+
+@import '../blocks/logo/logo.scss';
+
+@import '../blocks/content/content-wrapper.scss';
+@import '../blocks/content/content-header.scss';
+@import '../blocks/content/content-scrollable.scss';
+
+@import '../blocks/page/page.scss';
+@import '../blocks/page/page-header.scss';
+@import '../blocks/page/page-main.scss';
+@import '../blocks/page/page-content.scss';
+@import '../blocks/page/page-title.scss';
+@import '../blocks/page/page-subtitle.scss';
+@import '../blocks/page/page-footer.scss';
+
+
+
+@import '../blocks/sidebar/sidebar.scss';
+@import '../blocks/sidebar/sidebar-menu.scss';
+
+@import '../blocks/slide-menu/slide-menu.scss';
+@import '../blocks/about-company/about-company.scss';
+@import '../blocks/brand/brand.scss';
+@import '../blocks/technic/technic.scss';
+@import '../blocks/price-list/price-list.scss';
 
 body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+  @include content-text;
+  min-width: 320px;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
 }

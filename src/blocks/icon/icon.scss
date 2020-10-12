@@ -1,0 +1,52 @@
+.icon::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon--menu::after {
+  background-image: url('/src/blocks/icon/img/menu.svg');
+}
+
+.icon--phone::after {
+  background-image: url('/src/blocks/icon/img/phone.svg');
+}
+
+.icon--message::after {
+  background-image: url('/src/blocks/icon/img/message.svg');
+}
+
+.icon--people::after {
+  background-image: url('/src/blocks/icon/img/people.svg');
+}
+
+.icon--order::after {
+  background-image: url('/src/blocks/icon/img/order.svg');
+}
+
+.icon--status::after {
+  background-image: url('/src/blocks/icon/img/status.svg');
+}
+
+.icon--more::after {
+  background-image: url('/src/blocks/icon/img/more.svg');
+}
+
+.icon--less::after {
+  background-image: url('/src/blocks/icon/img/more.svg');
+  transform: rotate(180deg);
+}
+
+.icon--search::after {
+  background-image: url('/src/blocks/icon/img/search.svg');
+}
+
+.icon--close::after {
+  background-image: url('/src/blocks/icon/img/close.svg');
+}
+
+.icon--dropdown::after {
+  background-image: url('/src/blocks/icon/img/dropdown.svg');
+}

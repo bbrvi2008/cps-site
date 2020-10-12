@@ -1,0 +1,53 @@
+.popup-form {
+    min-height: 100vh;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    background-color: #FFFFFF;
+
+    @media (min-width: $screen-md) {
+        max-width: 440px;
+
+        border-left: 1px solid #D9FFF5;
+        box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+    }
+
+    // &__wrapper {
+    //     padding-left: 75px;
+    // }
+
+    // &__header {
+    //     @media (min-width: $screen-md) {
+    //         position: relative;
+    //     }
+    // }
+
+    // &__button-close {
+    //     @media (min-width: $screen-md) {
+    //         @include vertical-middle;
+    //         position: absolute;
+    //         left: -105px;
+    //     }
+    // }
+
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+
+        @media (min-width: $screen-md) {
+            margin-top: 0;
+        }
+
+        &::before {
+            @include vertical-middle;
+
+            @media (min-width: $screen-md) {
+                left: -26px;
+                border-radius: 2px;
+            }
+
+            @media (min-width: $screen-xl) {
+                left: -36px;
+            }
+        }
+    }
+}
