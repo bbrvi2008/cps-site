@@ -4,25 +4,32 @@
 // }
 
 .popup {
-    display: none;
-    position: absolute;
+    visibility: hidden;;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(255, 255, 255, 0.96);
-    z-index: 5;
+    z-index: 10;
+    transition-delay: .3s;;
+    transition: visibility ease-in .3s;
 
     @media (min-width: $screen-md) {
+        display: flex;
+        justify-content: flex-end;
     }
 
     &__item {
         height: 100%;
         overflow: auto;
+        transform: translateY(-100%);
+        transition: transform ease-out .3s;
 
         @media (min-width: $screen-md) {
             min-width: 440px;
             padding-left: 72px;
+            transform: translateX(100%);
         }
     }
 
@@ -35,6 +42,14 @@
         }
     }
 
+    &__form {
+        min-height: calc(100vh - 64px);
+
+        @media (min-width: $screen-md) {
+            min-height: 100vh;
+        }
+    }
+
     &__button-close {
         @media (min-width: $screen-md) {
             position: fixed;
@@ -43,12 +58,11 @@
         }
     }
 
-    &--active {
-        display: block;
-
-        @media (min-width: $screen-md) {
-            display: flex;
-            justify-content: flex-end;
+    &[active] {
+        visibility: visible;
+        
+        .popup__item {
+            transform: none;
         }
 
         & ~ * {

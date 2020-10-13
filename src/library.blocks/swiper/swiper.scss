@@ -1,0 +1,24 @@
+.swiper-pagination {
+  position: static;
+  line-height: 12px;
+  padding-right: 2px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: #DDDDDD;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #B5B6BC;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+.swiper-slide {
+  height: auto;
+}

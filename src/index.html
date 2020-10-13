@@ -12,16 +12,15 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 </head>
 <body>
-    <div class="popup">
+    <div id="popup-feedback" class="popup">
         <div class="popup__item">
             <header class="popup__header content-wrapper">
-                <button type="button" class="button popup__button-close"
+                <button type="button" class="popup-btn-close button popup__button-close"
                     aria-label="Закрыть">
                     <div class="button__icon button__icon--background icon icon--close"></div>
                 </button>
             </header>
-
-            <div class="popup-form content-wrapper">
+            <div class="popup__form popup-form content-wrapper">
                 <h1 class="page-title popup-form__title">Обратная связь</h1>
                 <form class="form">
                     <input type="text" name="name" placeholder="Имя" class="input-text form__input">
@@ -42,16 +41,16 @@
             </div>
         </div>
     </div>
-    <div class="popup">
+    <div id="popup-callback" class="popup">
         <div class="popup__item">
             <header class="popup__header content-wrapper">
-                <button type="button" class="button popup__button-close"
+                <button type="button" class="popup-btn-close button popup__button-close"
                     aria-label="Закрыть">
                     <div class="button__icon button__icon--background icon icon--close"></div>
                 </button>
             </header>
 
-            <div class="popup-form content-wrapper">
+            <div class="popup__form popup-form content-wrapper">
                 <h1 class="page-title popup-form__title">Заказать звонок</h1>
                 <form class="form">
                     <input type="tel" name="name" placeholder="Телефон" class="input-text form__input">
@@ -70,10 +69,10 @@
         </div>
     </div>
     <div class="page">
-        <aside class="sidebar sidebar--active1">
+        <aside id="popup-sidebar" class="sidebar">
             <div class="sidebar__inner">
                 <header class="sidebar__header">
-                    <button type="button" class="button sidebar__button" aria-label="Закрыть меню">
+                    <button type="button" class="popup-btn-close button sidebar__button sidebar__button-close" aria-label="Закрыть меню">
                         <div class="button__icon button__icon--background icon icon--close"></div>
                     </button>
                     <a href="#" class="logo sidebar__logo">
@@ -113,10 +112,12 @@
                 </nav>
                 <footer class="sidebar__footer">
                     <div class="sidebar__button-group">
-                        <button type="button" class="button sidebar__button" aria-label="Заказать звонок">
+                        <button type="button" class="popup-btn-open button sidebar__button" 
+                            data-popup-target="popup-callback" aria-label="Заказать звонок">
                             <div class="button__icon button__icon--background icon icon--phone"></div>
                         </button>
-                        <button type="button" class="button sidebar__button" aria-label="Обратная связь">
+                        <button type="button" class="popup-btn-open button sidebar__button" 
+                            data-popup-target="popup-feedback" aria-label="Обратная связь">
                             <div class="button__icon button__icon--background icon icon--message"></div>
                         </button>
                         <button type="button" class="button sidebar__button" aria-label="Личный кабинет">
@@ -137,7 +138,7 @@
             <header class="page-header content-wrapper">
                 <div class="page-header__inner">
                     <div class="page-header__button-group">
-                        <button type="button" class="button page-header__button" aria-label="Меню">
+                        <button type="button" class="popup-btn-open button page-header__button" data-popup-target="popup-sidebar" aria-label="Меню">
                             <div class="button__icon button__icon--background icon icon--menu"></div>
                         </button>
                     </div>
@@ -146,12 +147,12 @@
                         <img src="src/blocks/logo/img/logo.svg" class="logo__image" alt="">
                     </a>
                     <div class="page-header__button-group page-header__button-group--hidden--xs">
-                        <button type="button" class="button page-header__button"
-                            aria-label="Заказать звонок">
+                        <button type="button" class="popup-btn-open button page-header__button"
+                            data-popup-target="popup-callback" aria-label="Заказать звонок">
                             <div class="button__icon button__icon--background icon icon--phone"></div>
                         </button>
-                        <button type="button" class="button page-header__button"
-                            aria-label="Обратная связь">
+                        <button type="button" class="popup-btn-open button page-header__button"
+                            data-popup-target="popup-feedback" aria-label="Обратная связь">
                             <div class="button__icon button__icon--background icon icon--message"></div>
                         </button>
                         <button type="button" class="button page-header__button"
@@ -186,7 +187,7 @@
                 </header>
                 <nav class="page-main__item content-wrapper content-scrollable content-scrollable--screen--xs-md">
                     <ul class="slide-menu">
-                        <li class="slide-menu__item slide-menu__item--active">
+                        <li class="slide-menu__item" active>
                             <a href="#brands" class="slide-menu__link">Ремонтируемые бренды</a>
                         </li>
                         <li class="slide-menu__item">
@@ -210,13 +211,13 @@
                     <div class="about-company__description">
                         <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
                             отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
-                        <div id="hidden-about-company" class="about-company__description--hidden">
+                        <div id="hidden-about-company" hidden>
                             <p>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает
                                 большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по
                                 рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
                         </div>
-                        <button type="button" class="button button--text about-company__button"
-                            data-show-target="#hidden-about-company">
+                        <button type="button" class="btn-show-more button button--text about-company__button"
+                            data-show-target="hidden-about-company">
                             <div class="button__icon icon icon--more"></div>
                             <span class="button__text button__text--margin--left">
                                 Читать далее
@@ -229,128 +230,128 @@
                     <h2 class="page-subtitle content-wrapper">Ремонт техники различных брендов</h2>
                     <div class="content-wrapper content-scrollable content-scrollable--screen--xs swiper-container">
                         <ul id="brands" class="grid grid--hide-overflow--after-two-row swiper-wrapper">
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/lenovo.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/samsung.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/apple.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/viewsonic.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/bosch.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/hp.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/acer.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/sony.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/lenovo.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/samsung.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/apple.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/viewsonic.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/bosch.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/hp.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/acer.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
-                                <div class="brand swiper-slide">
+                            <li class="grid__item swiper-slide">
+                                <div class="brand">
                                     <img src="img/files/sony.png" alt="Samsung" class="brand__img">
                                     <button type="button" class="button">
                                         <div class="brand__icon button__icon button__icon--border icon icon--dropdown"></div>
@@ -361,7 +362,7 @@
                         <div class="swiper-pagination"></div>
                     </div>
                     <footer class="content-wrapper">
-                        <button type="button" class="button button--text button--hidden--xs" data-hidden="true" data-hidden-target="#brands">
+                        <button type="button" class="grid-btn-show-all button button--text button--hidden--xs" data-hidden="true" data-hidden-target="brands">
                             <div class="button__icon icon icon--more"></div>
                             <span class="button__text">
                                 Показать все
@@ -373,7 +374,7 @@
                     <h2 class="page-subtitle content-wrapper">Ремонт различных видов техники</h2>
                     <div class="content-wrapper content-scrollable content-scrollable--screen--xs swiper-container">
                         <ul id="technics" class="grid grid--hide-overflow--after-one-row swiper-wrapper">
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт ноутбуков</span>
                                     <button type="button" class="button">
@@ -381,7 +382,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт планшетов</span>
                                     <button type="button" class="button">
@@ -389,7 +390,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт ПК</span>
                                     <button type="button" class="button">
@@ -397,7 +398,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт мониторов</span>
                                     <button type="button" class="button">
@@ -405,7 +406,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт ноутбуков</span>
                                     <button type="button" class="button">
@@ -413,7 +414,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт планшетов</span>
                                     <button type="button" class="button">
@@ -421,7 +422,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт ПК</span>
                                     <button type="button" class="button">
@@ -429,7 +430,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт мониторов</span>
                                     <button type="button" class="button">
@@ -437,7 +438,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт ноутбуков</span>
                                     <button type="button" class="button">
@@ -445,7 +446,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт планшетов</span>
                                     <button type="button" class="button">
@@ -453,7 +454,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт ПК</span>
                                     <button type="button" class="button">
@@ -461,7 +462,7 @@
                                     </button>
                                 </div>
                             </li>
-                            <li class="grid__item">
+                            <li class="grid__item swiper-slide">
                                 <div class="technic swiper-slide">
                                     <span class="technic__text">Ремонт мониторов</span>
                                     <button type="button" class="button">
@@ -473,7 +474,7 @@
                         <div class="swiper-pagination"></div>
                     </div>
                     <footer class="content-wrapper">
-                        <button type="button" class="button button--text button--hidden--xs" data-hidden="true" data-hidden-target="#technics">
+                        <button type="button" class="grid-btn-show-all button button--text button--hidden--xs" data-hidden="true" data-hidden-target="devices">
                             <div class="button__icon icon icon--more"></div>
                             <span class="button__text">
                                 Показать все
@@ -484,7 +485,7 @@
                 <section id="price" class="price-list page-main__item">
                     <h2 class="page-subtitle content-wrapper">Цены на услуги</h2>
                     <div class="content-wrapper content-scrollable content-scrollable--screen--xs">
-                        <table class="price-list__table responsive-table">
+                        <table class="price-list__table responsive-table swiper-container">
                             <thead class="responsive-table__thead">
                                 <tr class="responsive-table__header">
                                     <th class="responsive-table__header-cell">Ремонтные услуги</th>
@@ -493,8 +494,8 @@
                                     <th class="responsive-table__header-cell"></th>
                                 </tr>
                             </thead>
-                            <tbody class="responsive-table__tbody">
-                                <tr class="responsive-table__row">
+                            <tbody class="responsive-table__tbody swiper-wrapper">
+                                <tr class="responsive-table__row swiper-slide">
                                     <td class="responsive-table__cell" data-title="Ремонтные услуги">
                                         <span class="responsive-table__cell-text">Диагностика</span>
                                     </td>
@@ -511,7 +512,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr class="responsive-table__row">
+                                <tr class="responsive-table__row swiper-slide">
                                     <td class="responsive-table__cell" data-title="Ремонтные услуги">
                                         <span class="responsive-table__cell-text">Замена дисплея</span>
                                     </td>
@@ -528,7 +529,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr class="responsive-table__row">
+                                <tr class="responsive-table__row swiper-slide">
                                     <td class="responsive-table__cell" data-title="Ремонтные услуги">
                                         <span class="responsive-table__cell-text">Замена полифонического динамика</span>
                                     </td>
@@ -545,7 +546,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr class="responsive-table__row">
+                                <tr class="responsive-table__row swiper-slide">
                                     <td class="responsive-table__cell" data-title="Ремонтные услуги">
                                         <span class="responsive-table__cell-text">Тестирование с выдачей технического заключения</span>
                                     </td>
@@ -562,7 +563,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr class="responsive-table__row">
+                                <tr class="responsive-table__row swiper-slide">
                                     <td class="responsive-table__cell" data-title="Ремонтные услуги">
                                         <span class="responsive-table__cell-text">Замена программного обеспечения</span>
                                     </td>
@@ -580,6 +581,7 @@
                                     </td>
                                 </tr>
                             </tbody>
+                            <tfoot  class="responsive-table__tfoot swiper-pagination"></tfoot>
                         </table>
                     </div>
                     <div class="content-wrapper">

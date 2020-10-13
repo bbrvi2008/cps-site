@@ -12,10 +12,11 @@
 
   &__item {
     flex: 1 0 85%;
-    margin-right: 24px;
+    margin-right: 16px;
 
     @media (min-width: $screen-md) {
       margin-top: 16px;
+      margin-right: 0;
       max-width: calc((100% - 48px) / 3);
       flex: 1 0 calc((100% - 48px) / 3);
     }
@@ -23,14 +24,6 @@
     @media (min-width: $screen-xl) {
       max-width: calc((100% - 72px) / 4);
       flex: 1 0 calc((100% - 72px) / 4);
-    }
-
-    &:nth-last-child(n + 1) {
-      margin-right: 16px;
-
-      @media (min-width: $screen-md) {
-        margin-right: 0;
-      }
     }
 
     &:nth-child(-n + 3) {

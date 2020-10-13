@@ -6,8 +6,7 @@
 @import '../blocks/responsive-table/responsive-table.scss';
 @import '../blocks/icon/icon.scss';
 @import '../blocks/button/button.scss';
-@import '../blocks/popup/popup.scss';
-@import '../blocks/popup/popup-form.scss';
+
 @import '../blocks/from/form.scss';
 @import '../blocks/from/input-text.scss';
 @import '../blocks/link/link.scss';
@@ -19,6 +18,7 @@
 @import '../blocks/content/content-scrollable.scss';
 
 @import '../blocks/page/page.scss';
+@import '../blocks/page/page-locked.scss';
 @import '../blocks/page/page-header.scss';
 @import '../blocks/page/page-main.scss';
 @import '../blocks/page/page-content.scss';
@@ -27,7 +27,8 @@
 @import '../blocks/page/page-footer.scss';
 
 
-
+@import '../blocks/popup/popup.scss';
+@import '../blocks/popup/popup-form.scss';
 @import '../blocks/sidebar/sidebar.scss';
 @import '../blocks/sidebar/sidebar-menu.scss';
 
@@ -36,6 +37,8 @@
 @import '../blocks/brand/brand.scss';
 @import '../blocks/technic/technic.scss';
 @import '../blocks/price-list/price-list.scss';
+
+@import '../library.blocks/swiper/swiper.scss';
 
 body {
   @include content-text;

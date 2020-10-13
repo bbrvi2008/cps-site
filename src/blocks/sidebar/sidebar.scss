@@ -1,9 +1,11 @@
 .sidebar {
   @include full-viewport;
-  display: none;
+  visibility: hidden;
   height: 100vh;
   position: fixed;
   z-index: 5;
+  transition: all ease-in .3s;
+
 
   @media (min-width: $screen-xl) {
     left: initial;
@@ -14,8 +16,7 @@
   @media (min-width: $screen-xl) {
     display: block;
     min-width: 320px;
-    border-left: 1px solid #D9FFF5;
-    border-right: 1px solid #D9FFF5;
+    visibility: visible;
   }
 
   &__inner {
@@ -25,10 +26,19 @@
     padding: 18px 16px 32px;
     background-color: #FFFFFF;
     overflow-y: auto;
+    transform: translateY(-100%);
+    transition: transform ease-in .3s;
 
     @media (min-width: $screen-md) {
       max-width: 320px;
       padding: 18px 24px 32px;
+      transform: translateX(-100%);
+    }
+
+    @media (min-width: $screen-xl) {
+      transform: none;
+      border-left: 1px solid #D9FFF5;
+      border-right: 1px solid #D9FFF5;
     }
 
     @media (min-width: $screen-md) and (max-width: $screen-xl) {
@@ -55,6 +65,12 @@
   &__button {
     &:nth-last-child(n + 2) {
       margin-right: 16px;
+    }
+  }
+
+  &__button-close {
+    @media (min-width: $screen-xl) {
+      display: none;
     }
   }
 
@@ -92,13 +108,17 @@
     text-transform: uppercase;
   }
 
-  &--active {
-    display: block;
+  &[active] {
+    visibility: visible;
 
     & ~ * {
       @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
         filter: grayscale(1);
       }
+    }
+
+    .sidebar__inner {
+      transform: translate(0);
     }
 
     &::before {

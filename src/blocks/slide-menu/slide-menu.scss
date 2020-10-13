@@ -32,7 +32,7 @@
       }
     }
 
-    &--active {
+    &[active] {
       border: 2px solid #B8FFEC;
       border-radius: 6px;
       background: #FFFFFF;

@@ -8,6 +8,23 @@
 
     color: #7E7E82;
     resize: none;
+    outline: none;
+
+    &:hover {
+        border: 1px solid $hover-background-color;
+
+        &::placeholder {
+            color: $hover-text-color;
+        }
+    }
+
+    &:focus {
+        border: 1px solid #B8FFEC;
+
+        &::placeholder {
+            color: #41F6D7;
+        }
+    }
 
     &::placeholder {
         color: #B5B6BC;

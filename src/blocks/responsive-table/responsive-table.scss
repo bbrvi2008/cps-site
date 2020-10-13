@@ -1,5 +1,4 @@
 .responsive-table {
-  padding: 16px 0;
 
   @media (max-width: $screen-md - 1) {
     display: block;
@@ -36,17 +35,23 @@
 
   &__tbody {
     @media (max-width: $screen-md - 1) {
+      padding: 16px 0;
       display: flex;
     }
 
     @media (min-width: $screen-md) {
-      border-radius: 6px;
-      // box-shadow: 0 0 0 1px #EAEAEA;
-      // background-color: #FFFFFF;
+      display: table-row-group;
+    }
+  }
+
+  &__tfoot {
+    @media (max-width: $screen-md - 1) {
+      display: block;
     }
   }
 
   &__row {
+    margin-right: 16px;
 
     @media (max-width: $screen-md - 1) {
       position: relative;
@@ -56,18 +61,12 @@
       background-color: #FFFFFF;
       padding: 16px;
       border-radius: 6px;
+      height: auto;
     }
 
     @media (min-width: $screen-md) {
+      margin-right: 0;
       transform: scale(1);
-    }
-
-    &:nth-last-child(n + 2) {
-      margin-right: 16px;
-
-      @media (min-width: $screen-md) {
-        margin-right: 0;
-      }
     }
 
     &:first-child {
