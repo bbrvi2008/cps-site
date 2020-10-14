@@ -12,7 +12,7 @@
     content: '';
     width: 4px;
     height: 40px;
-    background-color:#41F6D7;
+    background-color: $page-decorate-color;
     border-radius: 0 4px 4px 0;
 
     @media (min-width: $screen-md) {

@@ -3,7 +3,7 @@
   min-height: 88px;
   padding-top: 18px;
   padding-bottom: 18px;
-  border-bottom: 1px solid #D9FFF5;
+  border-bottom: 1px solid $page-border-color;
 
   @media (min-width: $screen-xl) {
     display: none;
@@ -29,7 +29,7 @@
     margin-right: 20px;
     border:none;
     border-radius: 1px;
-    background-color: #EAEAEA;
+    background-color: $border-color;
 
     @media (min-width: $screen-md) {
       margin-left: 20px;

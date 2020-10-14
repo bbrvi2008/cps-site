@@ -2,7 +2,35 @@ $screen-xs: 0;
 $screen-md: 768px;
 $screen-xl: 1440px;
 
-$page-background: #F8F8F8;
+$button-background-color: #FF3E79;
+$button-border-color: #FF3E79;
+
+$card-background-color: #FFFFFF;
+$border-color: #EAEAEA;
 $active-text-color: #7E7E82;
+
 $hover-text-color: #FF3E79;
 $hover-background-color: #FFE0E9;
+
+$gradiend-scroll-color-start: #F8F8F8;
+$gradiend-scroll-color-end: rgba(248, 248, 248, 0.0001);
+$gradiend-subtitle-color-start: #F8F8F8;
+$gradiend-subtitle-color-end: #FFFFFF;
+$gradiend-popup-color-start: rgba(69, 79, 126, 0.02);
+$gradiend-popup-color-end: rgba(14, 24, 80, 0.2);
+$sidebar-boxshadow-color: rgba(14, 24, 80, 0.2);
+
+$form-link-color: #FF3E79;
+$form-placeholder-text-color: #B5B6BC;
+$form-input-focus-placeholder-text-color: #41F6D7;
+$form-input-focus-border-color: #B8FFEC;
+
+$page-background: #F8F8F8;
+$page-border-color: #D9FFF5;
+$page-link-color: #1B1C21;
+$page-text-color: #7E7E82;
+$page-decorate-color: #41F6D7;
+
+$popup-background-color: rgba(255, 255, 255, 0.96);
+
+$side-menu-focus-border-color:  #B8FFEC;

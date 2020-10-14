@@ -10,12 +10,12 @@
         font-size: 14px;
         line-height: 16px;
         font-weight: 500;
-        color: #7E7E82;
+        color: $page-text-color;
     }
 
     &__link {
         text-decoration: none;
-        color: #FF3E79;
+        color: $form-link-color;
     }
 
     &__footer {

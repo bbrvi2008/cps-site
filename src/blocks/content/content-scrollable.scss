@@ -5,7 +5,7 @@
   &::after {
     content: '';
     position: absolute;
-    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    background: linear-gradient(270deg, $gradiend-scroll-color-start 16.84%, $gradiend-scroll-color-end 100%);
     z-index: 1;
     top: 0;
     bottom: 0;

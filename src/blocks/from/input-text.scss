@@ -1,12 +1,11 @@
 .input-text {
     @include highlight-text;
     width: 100%;
-    background: #FFFFFF;
-    border: 1px solid #EAEAEA;
+    border: 1px solid $border-color;
     border-radius: 8px;
     padding: 12px 16px;
 
-    color: #7E7E82;
+    color: $page-text-color;
     resize: none;
     outline: none;
 
@@ -19,14 +18,14 @@
     }
 
     &:focus {
-        border: 1px solid #B8FFEC;
+        border: 1px solid $form-input-focus-border-color;
 
         &::placeholder {
-            color: #41F6D7;
+            color: $form-input-focus-placeholder-text-color;
         }
     }
 
     &::placeholder {
-        color: #B5B6BC;
+        color: $form-placeholder-text-color;
     }
 }

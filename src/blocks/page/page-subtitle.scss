@@ -1,12 +1,12 @@
 .page-subtitle {
   padding-top: 16px;
   padding-bottom: 16px;
-  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
-  border-top: 1px solid #D9FFF5;
+  background: linear-gradient(270deg, $gradiend-subtitle-color-start 0%, $gradiend-subtitle-color-end 98.61%);
+  border-top: 1px solid $page-border-color;
   font-size: 16px;
   font-weight: normal;
   line-height: 24px;
   letter-spacing: -0.2px;
   text-transform: uppercase;
-  color: #7E7E82;
+  color: $page-text-color;
 }

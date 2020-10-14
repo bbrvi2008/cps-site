@@ -42,7 +42,7 @@
     }
 
     &--background {
-      background-color: #FF3E79;
+      background-color:$button-background-color;
 
       &::before {
         content: '';
@@ -53,14 +53,14 @@
         left: 0;
         border-radius: 50%;
         background-color: $hover-background-color;
-        border: 5px solid #FF3E79;
+        border: 5px solid $button-border-color;
         transform: scale(0);
         transition: transform ease-out .3s;
       }
     }
 
     &--border {
-      border: 2px solid #FF3E79;
+      border: 2px solid $button-border-color;
     }
   }
 
@@ -81,7 +81,7 @@
     height: 32px;
     padding: 4px 12px;
     border-radius: 16px;
-    background-color: #FF3E79;
+    background-color: $button-background-color;
 
     &:hover {
       background-color: $hover-background-color;

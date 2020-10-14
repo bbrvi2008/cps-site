@@ -1,7 +1,7 @@
 .page-footer {
   padding: 16px 0;
-  border-top: 1px solid #D9FFF5;
-  background-color: #F8F8F8;
+  border-top: 1px solid $page-border-color;
+  background-color: $page-background;
 
   @media (min-width: $screen-md) {
     padding-top: 32px;
