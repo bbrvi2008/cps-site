@@ -30,7 +30,7 @@
 
     &__header {
         padding-top: 24px;
-        background-color: $page-background;
+        background-color: $card-background-color;
 
         @media (min-width: $screen-md) {
             padding-top: 0;
